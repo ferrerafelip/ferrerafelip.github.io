@@ -1,0 +1,153 @@
+.formacao{ /* Elemento usado só para estilizar o fundo  */
+  background-color: #141414;
+  color: #ffffff;
+}
+
+
+.formacao-container { /* Container que está dentro do elemento footer para poder centralizar o conteúdo */
+  max-width: 65rem; /* Limite para que o conteúdo não expanda para mais que 65rem */
+  padding: 7.5rem 1.25rem; /* Paddings para que o conteúdo desgrude dos cantos da tela */
+  margin: 0 auto; /* Define as margens como zero para cima e baixo e automático dos lados para que o conteúdo fique centralizado*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Razão de 4fr 8fr, conforme o rascunho do figma */
+  gap: 6.25rem; /* Distância entre a imagem e o conteúdo de introdução */
+  position: relative;
+}
+
+.formacao .subtitulo{
+  color: #000000;
+  max-width: 5ch;
+}
+
+.formacao-texto{
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #a3a3a3;
+}
+
+.formacao-texto strong{
+  color: #ffffff;
+}
+
+.faculdade-lista{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+
+}
+
+.faculdade{
+  flex: 1;
+  background: #000000;
+  padding: 20px; 
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.faculdade-tipo{
+  font-size: .875rem;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+.faculdade-curso{
+  flex: 1;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.faculdade-curso::before{
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f828, #67dd0a);
+  position: absolute;
+  left: -24px;
+}
+
+.faculdade-instituicao{
+  font-size: 1.125rem;
+  color: #a3a3a3;
+}
+
+.cursos{
+  margin-bottom: 60px;
+}
+
+.formacao-extra h3{
+  font-size: .875rem;
+  color: #8f8f88;
+  text-transform: upercase;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.formacao-extra h3::before{
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: -5px;
+  left: -36px;
+}
+
+.cursos h3::before{
+  background: url(../img/cursos.svg) no-repeat center center;
+}
+
+.idiomas h3::before{
+  background: url(../img/idiomas.svg) no-repeat center center;
+}
+
+.fromacao-extra li{
+  font-size: 1.125rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.fromacao-extra span{
+  color: #8f8f8f;
+}
+
+.cursos li{
+  display: flex;
+  justify-content: space-between;   
+}
+
+@media (max-width: 800px){
+  .formacao-container{
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  .formacao .subtitulo{
+    color: #ffffff;
+  }
+  .formacao-texto{
+    font-size: 1.25rem;
+  }
+  .fromacao-extra h3::before{
+    position: static; /* Sem isso, os icones vazam da tela */
+    margin-bottom: 10px;
+  }
+}
+
+.formacao-container::after{
+  content: "";
+  display: block;
+  width: 130px;
+  height: 128px;
+  background: url("../img/detalhe.svg");
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+}

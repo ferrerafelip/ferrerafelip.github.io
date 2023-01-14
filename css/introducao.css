@@ -1,0 +1,61 @@
+.introducao {
+  max-width: 65rem; /* Limite para que o conteúdo não expanda para mais que 65rem */
+  padding: 2.5rem 1.25rem; /* Paddings para que o conteúdo desgrude dos cantos da tela */
+  margin: 0 auto; /* Define as margens como zero para cima e baixo e automático dos lados para que o conteúdo fique centralizado*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Razão de 4fr 8fr, conforme o rascunho do figma */
+  gap: 6.25rem; /* Distância entre a imagem e o conteúdo de introdução */
+}
+
+.introducao h1 {
+  font-size: 4.5rem;
+  line-height: 1.125; /* Quando colocado o valor sem unidade, ele se baseia no font-size especificado  */
+  margin-bottom: 1.875rem;
+  position: relative; /* Esse elemento é definido como referencia a imagem de detalhe */
+}
+
+.introducao h1::before {
+  content: "";
+  display: block;
+  width: 8.125rem;
+  height: 6.25rem;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute; /* Tem como referência o elemento pai */
+  top: -0.9375rem;
+  left: -2.5rem;
+  z-index: -1; /* Configura o detalhe para ficar atrás do título */
+}
+
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .introducao h1 {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .introducao h1::before {
+    width: 1.8rem;
+    height: 0.5rem;
+    left: 0rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .introducao{
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
